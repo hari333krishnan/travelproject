@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+    <style>
+        body{
+         background-color:cyan;
+         text-align:center;
+        }
+        h1{
+        color:blue;
+        text-align:center
+        }
+        h3{
+        color:red;
+        text-align:center
+        }
+        label{
+        color:blue;
+        }
+    </style>
+</head>
+<body>
+<h1>SIGNUP</h1>
+<form action="signup" method="post" >
+    {% csrf_token %}
+    <p> <label>Username : <input type="text" name="username" placeholder="username" ></label></p><br>
+    <p><label>First Name : <input type="text" name="firstname" placeholder="first name"></label><br>
+    <label>Last Name : <input type="text" name="lastname" placeholder="last name"></label></p><br>
+    <p><label>Email : <input type="email" name="email" placeholder="email"></label></p><br>
+    <p><label>Password : <input type="password" name="password1" placeholder="password"></label><br>
+    <label>Password : <input type="password" name="password2" placeholder="confirm password"></label></p><br>
+    <p><input type="submit" value="Signup" style="color:red; background-color:yellow; font-size:20px"></p>
+</form>
+<div>
+    {% for msg in messages %}
+    <h3>{{msg}}</h3>
+    {% endfor %}
+</div>
+</body>
+</html>

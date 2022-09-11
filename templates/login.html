@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        body{
+         background-color:cyan;
+         text-align:center;
+        }
+        h1{
+        color:blue;
+        text-align:center
+        }
+        h3{
+        color:red;
+        text-align:center
+        }
+        label{
+        color:blue;
+        }
+    </style>
+</head>
+<body>
+<h1>LOGIN</h1>
+<form action="login" method="post" >
+    {% csrf_token %}
+    <p> <label>Username : <input type="text" name="username" placeholder="username" ></label></p><br>
+    <p><label>Password : <input type="password" name="password" placeholder="password"></label></p><br>
+    <p><input type="submit" value="Login" style="color:blue; background-color:yellow; font-size:20px"></p>
+</form>
+<div>
+    {% for msg in messages %}
+    <h3>{{msg}}</h3>
+    {% endfor %}
+</div>
+</body>
+</html>
